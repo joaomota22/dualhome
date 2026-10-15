@@ -12,4 +12,29 @@ body {
     font-family: "Libre Caslon Condensed";
     font-optical-sizing: auto;
     font-style: normal;
+    height: 100vh;
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+}
+
+.item-nav {
+    padding-left: 15px;
+    padding-right: 15px;
+    margin-left: 2rem;
+    margin-right: 2rem;
+    border: 2px solid #3385FF;
+    border-radius: 50px 20px;  
+    background-color: #3385FF;
+}
+
+.item-nav:hover {
+    cursor: pointer;
+}
+
+.main {
+    display: flex;
+    align-items: center;
 }
