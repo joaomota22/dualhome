@@ -832,3 +832,186 @@ h1 span {
     transition-duration: 0.01ms !important;
   }
 }
+/* ==========================================
+   ESTILOS PARA A PÁGINA SOBRE NÓS
+   ========================================== */
+
+/* Navbar e Alinhamento do Cabeçalho */
+.site-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 16px 8%;
+    background: #ffffff;
+    border-bottom: 1px solid #e2e8f0;
+}
+
+.brand {
+    font-weight: 700;
+    font-size: 1.25rem;
+    color: #2563eb;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.navbar {
+    display: flex;
+    gap: 24px;
+}
+
+.navbar a {
+    text-decoration: none;
+    color: #64748b;
+    font-size: 0.95rem;
+    font-weight: 500;
+    transition: color 0.2s;
+}
+
+.navbar a.active, .navbar a:hover {
+    color: #2563eb;
+}
+
+.header-actions {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+}
+
+.login-link {
+    text-decoration: none;
+    color: #475569;
+    font-weight: 500;
+    font-size: 0.95rem;
+}
+
+.button-primary {
+    background-color: #2563eb;
+    color: #ffffff;
+    padding: 10px 18px;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 0.95rem;
+    transition: background-color 0.2s;
+}
+
+.button-primary:hover {
+    background-color: #1d4ed8;
+}
+
+/* Secção Principal Sobre Nós */
+.about-main {
+    padding: 80px 0;
+}
+
+.about-hero {
+    text-align: center;
+    max-width: 750px;
+    margin: 0 auto 60px auto;
+}
+
+.eyebrow-badge {
+    display: inline-block;
+    background-color: #eff6ff;
+    color: #2563eb;
+    padding: 6px 16px;
+    border-radius: 20px;
+    font-size: 0.85rem;
+    font-weight: 600;
+    margin-bottom: 20px;
+    border: 1px solid #dbeafe;
+}
+
+.about-hero {
+    text-align: center;
+    max-width: 750px;
+    margin: 0 auto 60px auto;
+    
+}
+.about-hero h1 {
+    font-size: 2.75rem;
+    font-weight: 800;
+    letter-spacing: -0.02em;
+    margin-bottom: 20px;
+    color: #0f172a;
+    text-align: center; /
+}
+.text-blue {
+    color: #2563eb;
+}
+
+.subtitle {
+    font-size: 1.15rem;
+    color: #475569;
+    line-height: 1.7;
+}
+
+/* Grelha de Cartões de Valores */
+.values-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 24px;
+    margin-bottom: 60px;
+}
+
+.value-card {
+    background: #ffffff;
+    padding: 32px;
+    border-radius: 16px;
+    border: 1px solid #e2e8f0;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.03);
+}
+
+.card-icon {
+    width: 48px;
+    height: 48px;
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.25rem;
+    margin-bottom: 20px;
+}
+
+.blue-bg { background-color: #eff6ff; }
+.green-bg { background-color: #f0fdf4; }
+.purple-bg { background-color: #f5f3ff; }
+
+.value-card h3 {
+    font-size: 1.25rem;
+    font-weight: 700;
+    margin-bottom: 10px;
+    color: #0f172a;
+}
+
+.value-card p {
+    color: #64748b;
+    font-size: 0.95rem;
+    line-height: 1.6;
+}
+
+/* Secção de História */
+.story-section {
+    background: #ffffff;
+    border: 1px solid #e2e8f0;
+    border-radius: 20px;
+    padding: 48px;
+    text-align: center;
+}
+
+.story-section h2 {
+    font-size: 1.8rem;
+    font-weight: 700;
+    margin-bottom: 16px;
+    color: #0f172a;
+}
+
+.story-section p {
+    max-width: 700px;
+    margin: 0 auto;
+    color: #475569;
+    font-size: 1.05rem;
+    line-height: 1.7;
+}
