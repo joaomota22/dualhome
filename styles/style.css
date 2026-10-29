@@ -832,6 +832,10 @@ h1 span {
     transition-duration: 0.01ms !important;
   }
 }
+<<<<<<< HEAD
+=======
+<<<<<<<< HEAD:sytles/style.css
+>>>>>>> 6ca2c6a3f7add03f34c14b45f12d521fbc20ae6a
 /* =====================================
    LOGIN - DUALHOME
 ===================================== */
@@ -1183,6 +1187,10 @@ h1 span {
         font-size: 23px;
     }
 }
+<<<<<<< HEAD
+=======
+========
+>>>>>>> 6ca2c6a3f7add03f34c14b45f12d521fbc20ae6a
 /* ==========================================
    ESTILOS PARA A PÁGINA SOBRE NÓS
    ========================================== */
@@ -1366,6 +1374,7 @@ h1 span {
     font-size: 1.05rem;
     line-height: 1.7;
 }
+<<<<<<< HEAD
 /* =====================================
    LOGIN - DESIGN ALTERNATIVO
 ===================================== */
@@ -1863,3 +1872,6 @@ h1 span {
         font-size: 28px;
     }
 }
+=======
+>>>>>>>> 6ca2c6a3f7add03f34c14b45f12d521fbc20ae6a:styles/style.css
+>>>>>>> 6ca2c6a3f7add03f34c14b45f12d521fbc20ae6a
