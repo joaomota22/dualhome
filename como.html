@@ -4,149 +4,146 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Como funciona | DualHome</title>
-  <link rel="stylesheet" href="sytles/style.css">
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles/style.css">
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 </head>
 <body>
 
-  <header class="header">
-    <div class="container header-content">
-      <a href="index.html" class="logo">
-        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#7c3aed" stroke-width="2.2">
-          <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/>
-          <polyline points="9 22 9 12 15 12 15 22"/>
-        </svg>
-        DualHome
-      </a>
+  <header class="site-header page-shell">
+    <a href="index.html" class="brand">
+      <span class="brand-mark">⌂</span>
+      Dual<span class="brand-light">Home</span>
+    </a>
 
-      <nav class="nav">
-        <a href="index.html">Início</a>
-        <a href="como.html" class="active">Como funciona</a>
-        <a href="#">Sobre nós</a>
-        <a href="#">Contacto</a>
-      </nav>
+    <nav class="navbar">
+      <a href="index.html" class="nav-link">Início</a>
+      <a href="como.html" class="nav-link active">Como funciona</a>
+      <a href="sobre.html" class="nav-link">Sobre nós</a>
+    </nav>
 
-      <div class="header-actions">
-        <a href="#" class="btn-login">Entrar</a>
-        <a href="#" class="btn-primary">Começar grátis</a>
-      </div>
+    <div class="header-actions">
+      <a href="login.html" class="login-link">Entrar</a>
+      <a href="#" class="button button-small">Começar grátis</a>
     </div>
   </header>
 
   <main>
-    <section class="hero">
-      <div class="container">
-        <h1>Como funciona o DualHome. <span class="rocket">🚀</span></h1>
-        <p class="subtitle">
-          Simplifica a logística e as despesas da guarda partilhada em quatro<br>
-          passos fáceis, sem stress ou esquecimentos.
-        </p>
+    <!-- TÍTULO -->
+    <section class="page-shell" style="padding: 64px 0 20px; text-align: center;">
+      <div class="eyebrow" style="margin: 0 auto 22px;">
+        <span class="eyebrow-dot"></span>
+        Processo simples
+      </div>
+      <h1 style="max-width: 700px; margin: 0 auto;">
+        Como funciona o <span>DualHome</span>
+      </h1>
+      <p class="hero-description" style="margin: 20px auto 0; max-width: 560px;">
+        Simplifica a logística e as despesas da guarda partilhada em quatro passos fáceis, sem stress ou esquecimentos.
+      </p>
+    </section>
+
+    <!-- FLUXO VISUAL -->
+    <section class="page-shell" style="padding: 40px 0 50px;">
+      <div style="display: flex; align-items: flex-start; justify-content: center; gap: 12px; flex-wrap: wrap;">
+
+        <!-- Passo 1 -->
+        <div style="display: flex; flex-direction: column; align-items: center; gap: 12px;">
+          <div style="width: 90px; height: 72px; background: #fff; border: 1px solid var(--line); border-radius: 16px; display: flex; align-items: center; justify-content: center; box-shadow: 0 4px 14px rgba(30,39,83,0.06);">
+            <div style="display: flex; gap: 6px; position: relative;">
+              <div style="width: 26px; height: 26px; border-radius: 50%; background: #c7d2fe; border: 2px solid #fff;"></div>
+              <div style="width: 26px; height: 26px; border-radius: 50%; background: #a5b4fc; border: 2px solid #fff;"></div>
+              <div style="width: 26px; height: 26px; border-radius: 50%; background: #818cf8; border: 2px solid #fff; position: absolute; bottom: -14px; left: 50%; transform: translateX(-50%);"></div>
+              <div style="position: absolute; right: -20px; top: 50%; transform: translateY(-50%); width: 22px; height: 22px; background: #f5f6fb; border: 1px solid var(--line); border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 14px; color: var(--blue); font-weight: 700;">+</div>
+            </div>
+          </div>
+        </div>
+
+        <div style="width: 40px; height: 2px; background: repeating-linear-gradient(to right, #cbd5e1 0, #cbd5e1 4px, transparent 4px, transparent 8px); margin-top: 35px;"></div>
+
+        <!-- Passo 2 -->
+        <div style="display: flex; flex-direction: column; align-items: center; gap: 12px;">
+          <div style="width: 72px; height: 72px; background: #fff; border: 1px solid var(--line); border-radius: 16px; display: flex; flex-direction: column; justify-content: center; gap: 6px; padding: 14px; box-shadow: 0 4px 14px rgba(30,39,83,0.06);">
+            <div style="height: 6px; background: #e2e8f0; border-radius: 3px;"></div>
+            <div style="height: 5px; background: var(--blue); border-radius: 3px; width: 70%;"></div>
+            <div style="height: 5px; background: #e2e8f0; border-radius: 3px;"></div>
+            <div style="height: 5px; background: #e2e8f0; border-radius: 3px;"></div>
+          </div>
+        </div>
+
+        <div style="width: 40px; height: 2px; background: repeating-linear-gradient(to right, #cbd5e1 0, #cbd5e1 4px, transparent 4px, transparent 8px); margin-top: 35px;"></div>
+
+        <!-- Passo 3 -->
+        <div style="display: flex; flex-direction: column; align-items: center; gap: 12px;">
+          <div style="width: 64px; height: 64px; background: #e8eaff; border: 1px solid var(--line); border-radius: 16px; display: flex; align-items: center; justify-content: center; box-shadow: 0 4px 14px rgba(30,39,83,0.06);">
+            <span style="font-size: 24px;">🔑</span>
+          </div>
+          <span style="background: #e5f3e9; color: #43865a; font-size: 11px; font-weight: 700; padding: 4px 12px; border-radius: 999px;">Aprovado ✓</span>
+        </div>
+
+        <div style="width: 40px; height: 2px; background: repeating-linear-gradient(to right, #cbd5e1 0, #cbd5e1 4px, transparent 4px, transparent 8px); margin-top: 35px;"></div>
+
+        <!-- Passo 4 -->
+        <div style="display: flex; flex-direction: column; align-items: center; gap: 12px;">
+          <div style="width: 84px; height: 64px; background: #fff; border: 1px solid var(--line); border-radius: 16px; display: flex; flex-direction: column; align-items: center; justify-content: center; box-shadow: 0 4px 14px rgba(30,39,83,0.06);">
+            <span style="font-size: 10px; color: var(--muted);">Despesa</span>
+            <strong style="font-size: 18px;">50€</strong>
+          </div>
+          <div style="display: flex; flex-direction: column; gap: 4px; font-size: 10px; color: #94a3b8;">
+            <span>50% / 50%</span>
+            <span>50% / 50%</span>
+          </div>
+        </div>
+
       </div>
     </section>
 
-    <section class="flow-section">
-      <div class="container">
-        <div class="flow">
-          <div class="flow-block">
-            <div class="flow-card family">
-              <div class="network">
-                <div class="person p1"></div>
-                <div class="person p2"></div>
-                <div class="person p3"></div>
-                <div class="plus">+</div>
-              </div>
-            </div>
-          </div>
-
-          <div class="connector"></div>
-
-          <div class="flow-block">
-            <div class="flow-card checklist">
-              <div class="check-header"></div>
-              <div class="check-item checked"></div>
-              <div class="check-item"></div>
-              <div class="check-item"></div>
-            </div>
-          </div>
-
-          <div class="connector"></div>
-
-          <div class="flow-block">
-            <div class="flow-card access">
-              <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#7c3aed" stroke-width="1.8">
-                <rect x="3" y="11" width="18" height="11" rx="2" ry="2"/>
-                <path d="M7 11V7a5 5 0 0 1 10 0v4"/>
-              </svg>
-            </div>
-            <span class="status">Aprovado ✓</span>
-          </div>
-
-          <div class="connector"></div>
-
-          <div class="flow-block">
-            <div class="flow-card money">
-              <span class="money-label">Despesa</span>
-              <span class="money-value">50€</span>
-            </div>
-            <div class="percentages">
-              <div class="perc">50% / 50%</div>
-              <div class="perc">50% / 50%</div>
-            </div>
-          </div>
+    <!-- 4 PASSOS -->
+    <section class="page-shell" style="padding-bottom: 60px;">
+      <div style="display: grid; grid-template-columns: repeat(4, 1fr); gap: 28px;">
+        <div>
+          <h3 style="font-size: 15px; font-weight: 700; margin-bottom: 10px;">01 / Criar Perfil Familiar 👨‍👩‍👧‍👦</h3>
+          <p style="color: var(--muted); font-size: 13px; line-height: 1.6;">Regista-te e conecta os teus pais e irmãos para que todos fiquem em sintonia.</p>
+        </div>
+        <div>
+          <h3 style="font-size: 15px; font-weight: 700; margin-bottom: 10px;">02 / Preparar Checklists 📋</h3>
+          <p style="color: var(--muted); font-size: 13px; line-height: 1.6;">Cria listas rápidas para a transição de fim de semana, com o essencial para a escola e o dia a dia.</p>
+        </div>
+        <div>
+          <h3 style="font-size: 15px; font-weight: 700; margin-bottom: 10px;">03 / Pedidos de Acesso 🔑</h3>
+          <p style="color: var(--muted); font-size: 13px; line-height: 1.6;">Garante autorização rápida para recolher pertences esquecidos, com notificações para os teus pais.</p>
+        </div>
+        <div>
+          <h3 style="font-size: 15px; font-weight: 700; margin-bottom: 10px;">04 / Gestão Monetária 💶</h3>
+          <p style="color: var(--muted); font-size: 13px; line-height: 1.6;">Regista e partilha despesas comuns (como material escolar, desporto ou saúde) de forma justa e transparente.</p>
         </div>
       </div>
     </section>
 
-    <section class="steps-section">
-      <div class="container">
-        <div class="steps">
-          <div class="step">
-            <h3>01 / Criar Perfil Familiar <span>👨‍👩‍👧‍👦</span></h3>
-            <p>Regista-te e conecta os teus pais e irmãos para que todos fiquem em sintonia.</p>
-          </div>
-          <div class="step">
-            <h3>02 / Preparar Checklists <span>📋</span></h3>
-            <p>Cria listas rápidas para a transição de fim de semana, com o essencial para a escola e o dia a dia.</p>
-          </div>
-          <div class="step">
-            <h3>03 / Pedidos de Acesso <span>🔑</span></h3>
-            <p>Garante autorização rápida para recolher pertences esquecidos, com notificações para os teus pais.</p>
-          </div>
-          <div class="step">
-            <h3>04 / Gestão Monetária <span>💶</span></h3>
-            <p>Regista e partilha despesas comuns (como material escolar, desporto ou saúde) de forma justa e transparente.</p>
-          </div>
+    <!-- BENEFÍCIOS -->
+    <section class="features">
+      <div class="feature-item">
+        <div class="feature-icon icon-blue">📋</div>
+        <div>
+          <h2>Checklists Inteligentes</h2>
+          <p>Nunca mais te esqueças do essencial.</p>
+        </div>
+      </div>
+      <div class="feature-item">
+        <div class="feature-icon icon-green">🔑</div>
+        <div>
+          <h2>Acessos Rápidos</h2>
+          <p>Pertences recuperados sem atritos.</p>
+        </div>
+      </div>
+      <div class="feature-item">
+        <div class="feature-icon icon-yellow">💶</div>
+        <div>
+          <h2>Gestão Financeira</h2>
+          <p>Divisão de despesas partilhadas com clareza.</p>
         </div>
       </div>
     </section>
 
-    <section class="features-section">
-      <div class="container">
-        <div class="features">
-          <div class="feature">
-            <span class="f-icon">📋</span>
-            <div>
-              <strong>Checklists Inteligentes</strong>
-              <p>Nunca mais te esqueças do essencial.</p>
-            </div>
-          </div>
-          <div class="feature">
-            <span class="f-icon">🔑</span>
-            <div>
-              <strong>Acessos Rápidos</strong>
-              <p>Pertences recuperados sem atritos.</p>
-            </div>
-          </div>
-          <div class="feature">
-            <span class="f-icon">💶</span>
-            <div>
-              <strong>Gestão Financeira</strong>
-              <p>Divisão de despesas partilhadas com clareza.</p>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
   </main>
 
 </body>
