@@ -1,0 +1,161 @@
+<?php
+    # isto e apenas um teste
+    echo "php testa a funcionar!";
+?>
+
+<!doctype html>
+<html lang="pt-PT">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" type="text/css" href="styles/style.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#f5f6fb" />
+    <title>DualHome</title>
+  </head>
+
+  <body>
+    <div class="page-shell">
+      <header class="site-header">
+        <a class="brand" href="#inicio" aria-label="DualHome, início">
+          <span class="brand-mark" aria-hidden="true">⌂</span>
+          <span>Dual<span class="brand-light">Home</span></span>
+        </a>
+
+        <nav class="navbar" aria-label="Navegação principal">
+          <a class="nav-link active" href="#inicio">Início</a>
+          <a class="nav-link" href="#funcionalidades">Como funciona</a>
+          <a class="nav-link" href="sobrenos.html">Sobre nós</a>
+        </nav>
+
+        <div class="header-actions">
+          <a class="login-link" href="/entrar">Entrar</a>
+          <a class="button button-small" href="/comecar"
+            >Começar grátis <span aria-hidden="true">↗</span></a
+          >
+        </div>
+      </header>
+
+      <main id="inicio">
+        <section class="hero" aria-labelledby="hero-title">
+          <div class="hero-copy">
+            <p class="eyebrow">
+              <span class="eyebrow-dot"></span> A tua rotina entre duas casas,
+              organizada
+            </p>
+            <h1 id="hero-title">
+              Guarda partilhada.<br /><span>Logística resolvida.</span>
+            </h1>
+            <p class="hero-description">
+              O DualHome ajuda jovens e famílias em residência alternada a gerir
+              checklists de transição, pedir acesso a pertences esquecidos e
+              organizar o dia a dia. Sem stress, sem mal-entendidos.
+            </p>
+            <div class="hero-actions">
+              <a class="button" href="#comecar"
+                >Experimentar agora <span aria-hidden="true">↗</span></a
+              >
+              <a class="button button-outline" href="#funcionalidades"
+                ><span class="play-icon" aria-hidden="true">▶</span> Ver
+                demonstração</a
+              >
+            </div>
+            <div class="trust-note">
+              <span class="trust-check" aria-hidden="true">✓</span> Privado,
+              simples e feito para a tua família
+            </div>
+          </div>
+
+          <div
+            class="app-preview"
+            aria-label="Pré-visualização da checklist DualHome"
+          >
+            <div class="preview-glow" aria-hidden="true"></div>
+            <div class="phone-panel">
+              <div class="phone-topline">
+                <span>09:41</span><span>•••</span>
+              </div>
+              <div class="phone-brand">
+                <span class="mini-mark" aria-hidden="true">⌂</span> DualHome
+                <span class="menu-mark" aria-hidden="true">☰</span>
+              </div>
+              <div class="week-label">ESTA SEMANA <span>12–18 OUT</span></div>
+              <div class="home-switch">
+                <span class="home-dot home-dot-blue"></span
+                ><span>Casa da mãe</span><span class="switch-arrow">⌄</span>
+              </div>
+              <div class="bag-card">
+                <div class="bag-heading">
+                  <div>
+                    <span class="bag-kicker">A TUA CHECKLIST</span>
+                    <h2>Mala de transição</h2>
+                  </div>
+                  <span class="bag-emoji" aria-hidden="true">🎒</span>
+                </div>
+                <div class="progress-line"><span></span></div>
+                <p class="progress-caption">
+                  6 de 8 preparados <strong>75%</strong>
+                </p>
+                <ul class="check-list">
+                  <li><span class="checked">✓</span> Portátil e carregador</li>
+                  <li><span class="checked">✓</span> Caderno de exercícios</li>
+                  <li><span class="unchecked"></span> Chaves de casa</li>
+                </ul>
+              </div>
+              <div class="next-card">
+                <span class="next-icon" aria-hidden="true">⌂</span
+                ><span
+                  ><small>PRÓXIMA TRANSIÇÃO</small
+                  ><strong>Amanhã, às 18:00</strong></span
+                ><span class="next-arrow" aria-hidden="true">→</span>
+              </div>
+            </div>
+            <div class="access-float">
+              <span class="key-icon" aria-hidden="true">⌑</span
+              ><span
+                ><small>PEDIDO DE ACESSO</small
+                ><strong>Chaves autorizadas</strong></span
+              ><span class="access-check" aria-hidden="true">✓</span>
+            </div>
+          </div>
+        </section>
+
+        <section
+          class="features"
+          id="funcionalidades"
+          aria-label="Funcionalidades"
+        >
+          <article class="feature-item">
+            <span class="feature-icon icon-blue" aria-hidden="true">✓</span>
+            <div>
+              <h2>Checklists inteligentes</h2>
+              <p>Nada fica para trás na mudança.</p>
+            </div>
+            <span class="feature-emoji" aria-hidden="true">🎒</span>
+          </article>
+          <article class="feature-item">
+            <span class="feature-icon icon-green" aria-hidden="true">↗</span>
+            <div>
+              <h2>Pedidos de acesso</h2>
+              <p>Pertences pedidos sem confusão.</p>
+            </div>
+            <span class="feature-emoji" aria-hidden="true">🔑</span>
+          </article>
+          <article class="feature-item" id="sobre">
+            <span class="feature-icon icon-yellow" aria-hidden="true">€</span>
+            <div>
+              <h2>Rotina mais leve</h2>
+              <p>Mais clareza para toda a família.</p>
+            </div>
+            <span class="feature-emoji" aria-hidden="true">✦</span>
+          </article>
+        </section>
+      </main>
+    </div>
+  </body>
+</html>
