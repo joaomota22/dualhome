@@ -13,23 +13,7 @@
 <body>
 
     <div class="page-shell">
-        <header class="site-header">
-            <a class="brand" href="index.html" aria-label="DualHome, início">
-                <span class="brand-mark" aria-hidden="true">⌂</span>
-                <span>Dual<span class="brand-light">Home</span></span>
-            </a>
-
-            <nav class="navbar" aria-label="Navegação principal">
-                <a class="nav-link active" href="index.html">Início</a>
-                <a class="nav-link" href="#funcionalidades">Como funciona</a>
-                <a class="nav-link" href="sobrenos.html">Sobre nós</a>
-            </nav>
-
-            <div class="header-actions">
-                <a class="login-link" href="Login.html">Entrar</a>
-                <a class="button button-small" href="/comecar">Começar grátis <span aria-hidden="true">↗</span></a>
-            </div>
-        </header>
+        <?php $paginaAtiva = 'sobre'; require __DIR__ . '/includes/navbar.php'; ?>
 
         <main class="main-content about-main">
             <section class="about-hero">

@@ -9,23 +9,9 @@
 </head>
 <body>
 
-  <header class="site-header page-shell">
-    <a href="index.html" class="brand">
-      <span class="brand-mark">⌂</span>
-      Dual<span class="brand-light">Home</span>
-    </a>
-
-    <nav class="navbar">
-      <a href="index.html" class="nav-link">Início</a>
-      <a href="como.html" class="nav-link active">Como funciona</a>
-      <a href="sobre.html" class="nav-link">Sobre nós</a>
-    </nav>
-
-    <div class="header-actions">
-      <a href="login.html" class="login-link">Entrar</a>
-      <a href="#" class="button button-small">Começar grátis</a>
-    </div>
-  </header>
+  <div class="page-shell">
+    <?php $paginaAtiva = 'como'; require __DIR__ . '/includes/navbar.php'; ?>
+  </div>
 
   <main>
     <section class="page-shell process-intro">

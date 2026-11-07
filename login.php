@@ -1,3 +1,56 @@
+<?php
+require_once __DIR__ . '/config/database.php';
+
+$feedback = '';
+$email = '';
+
+if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+    $email = isset($_POST['email']) && is_string($_POST['email']) ? trim($_POST['email']) : '';
+    $password = isset($_POST['password']) && is_string($_POST['password']) ? $_POST['password'] : '';
+
+    if (!filter_var($email, FILTER_VALIDATE_EMAIL) || $password === '') {
+        $feedback = 'E-mail ou palavra-passe inválidos.';
+    } else {
+        try {
+            $statement = ligarBaseDados()->prepare(
+                'SELECT id, nome, email, password, tipo_perfil FROM Utilizadores WHERE email = :email LIMIT 1'
+            );
+            $statement->execute([':email' => $email]);
+            $user = $statement->fetch(PDO::FETCH_ASSOC);
+
+            if (!$user || !password_verify($password, $user['password'])) {
+                $feedback = 'E-mail ou palavra-passe inválidos.';
+            } else {
+                $remember = isset($_POST['remember']) && $_POST['remember'] === '1';
+                $sessionLifetime = $remember ? 2592000 : 0;
+
+                if ($remember) {
+                    ini_set('session.gc_maxlifetime', (string) $sessionLifetime);
+                }
+
+                session_set_cookie_params([
+                    'lifetime' => $sessionLifetime,
+                    'path' => '/',
+                    'secure' => !empty($_SERVER['HTTPS']) && $_SERVER['HTTPS'] !== 'off',
+                    'httponly' => true,
+                    'samesite' => 'Lax',
+                ]);
+                session_start();
+                session_regenerate_id(true);
+                $_SESSION['user_id'] = (int) $user['id'];
+                $_SESSION['user_name'] = $user['nome'];
+                $_SESSION['user_email'] = $user['email'];
+                $_SESSION['user_role'] = $user['tipo_perfil'];
+
+                header('Location: index.php');
+                exit;
+            }
+        } catch (PDOException $exception) {
+            $feedback = 'Não foi possível iniciar sessão. Confirma que o MySQL do WAMP está ativo e que a base de dados dualhome_db existe.';
+        }
+    }
+}
+?>
 <!doctype html>
 <html lang="pt-PT">
 
@@ -23,19 +76,7 @@
 
     <div class="page-shell">
 
-        <!-- Cabeçalho -->
-        <header class="site-header">
-
-            <a class="brand" href="index.html">
-                <span class="brand-mark">⌂</span>
-                <span>Dual<span class="brand-light">Home</span></span>
-            </a>
-
-            <a class="login-link" href="index.html">
-                ← Voltar ao início
-            </a>
-
-        </header>
+        <?php $paginaAtiva = 'login'; require __DIR__ . '/includes/navbar.php'; ?>
 
         <!-- Conteúdo principal -->
         <main class="login-layout">
@@ -107,7 +148,11 @@
 
                 </div>
 
-                <form action="#" method="post">
+                <?php if ($feedback !== ''): ?>
+                    <p class="signup-message" role="alert"><?= htmlspecialchars($feedback, ENT_QUOTES, 'UTF-8') ?></p>
+                <?php endif; ?>
+
+                <form action="login.php" method="post">
 
                     <div class="login-field">
 
@@ -121,6 +166,8 @@
                             name="email"
                             placeholder="exemplo@email.com"
                             autocomplete="email"
+                            maxlength="150"
+                            value="<?= htmlspecialchars($email, ENT_QUOTES, 'UTF-8') ?>"
                             required
                         >
 
@@ -133,10 +180,6 @@
                             <label for="password">
                                 Palavra-passe
                             </label>
-
-                            <a href="recuperar-password.html">
-                                Esqueceste-te?
-                            </a>
 
                         </div>
 
@@ -157,6 +200,7 @@
                             <input
                                 type="checkbox"
                                 name="remember"
+                                value="1"
                             >
                             Manter sessão iniciada
                         </label>
@@ -174,7 +218,7 @@
 
                     <p>
                         Ainda não tens conta?
-                        <a href="registo.html">Criar conta grátis</a>
+                        <a href="registar.php">Criar conta grátis</a>
                     </p>
 
                 </div>

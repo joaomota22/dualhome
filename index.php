@@ -1,8 +1,3 @@
-<?php
-    # isto e apenas um teste
-    echo "php testa a funcionar!";
-?>
-
 <!doctype html>
 <html lang="pt-PT">
   <head>
@@ -21,25 +16,7 @@
 
   <body>
     <div class="page-shell">
-      <header class="site-header">
-        <a class="brand" href="#inicio" aria-label="DualHome, início">
-          <span class="brand-mark" aria-hidden="true">⌂</span>
-          <span>Dual<span class="brand-light">Home</span></span>
-        </a>
-
-        <nav class="navbar" aria-label="Navegação principal">
-          <a class="nav-link active" href="#inicio">Início</a>
-          <a class="nav-link" href="#funcionalidades">Como funciona</a>
-          <a class="nav-link" href="sobrenos.html">Sobre nós</a>
-        </nav>
-
-        <div class="header-actions">
-          <a class="login-link" href="/entrar">Entrar</a>
-          <a class="button button-small" href="/comecar"
-            >Começar grátis <span aria-hidden="true">↗</span></a
-          >
-        </div>
-      </header>
+      <?php $paginaAtiva = 'inicio'; require __DIR__ . '/includes/navbar.php'; ?>
 
       <main id="inicio">
         <section class="hero" aria-labelledby="hero-title">
