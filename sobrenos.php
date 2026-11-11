@@ -63,6 +63,8 @@
             </section>
 
         </main>
+
+      <?php require __DIR__ . '/includes/footer.php'; ?>
     </div>
 
 </body>

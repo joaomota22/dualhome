@@ -215,12 +215,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
         </main>
 
-        <!-- Rodapé -->
-        <footer class="login-footer">
-            <p>
-                © 2026 DualHome. Feito para uma rotina mais simples.
-            </p>
-        </footer>
+      <?php require __DIR__ . '/includes/footer.php'; ?>
 
     </div>
 

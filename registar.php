@@ -203,6 +203,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
           </article>
         </section>
       </main>
+
+      <?php require __DIR__ . '/includes/footer.php'; ?>
     </div>
   </body>
 </html>

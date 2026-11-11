@@ -2557,3 +2557,125 @@ h1 span {
     padding: 18px 18px;
   }
 }
+
+/* Entrar numa família com código */
+.family-form:has(input[name="modo"][value="entrar"]:checked) .family-criar,
+.family-form:has(input[name="modo"][value="criar"]:checked) .family-entrar {
+  display: none;
+}
+
+.family-section {
+  margin-bottom: 4px;
+}
+
+.codigo-input {
+  text-transform: uppercase;
+  letter-spacing: 0.18em;
+  font-weight: 700;
+}
+
+/* Código de convite no painel */
+.invite-card {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 18px;
+  margin-bottom: 16px;
+  padding: 20px 24px;
+  border: 1px solid rgba(255, 255, 255, 0.95);
+  border-radius: 17px;
+  background: rgba(255, 255, 255, 0.78);
+  box-shadow: 0 18px 42px rgba(42, 49, 100, 0.14);
+}
+
+.invite-card small {
+  display: block;
+  color: var(--muted);
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.invite-code {
+  display: block;
+  margin-top: 6px;
+  color: var(--blue);
+  font-size: 26px;
+  font-weight: 800;
+  letter-spacing: 0.2em;
+}
+
+.invite-card p {
+  margin: 6px 0 0;
+  color: #747a8b;
+  font-size: 11px;
+}
+
+.invite-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.invite-actions .button {
+  box-shadow: none;
+}
+
+.invite-card .invite-status {
+  width: 100%;
+  min-height: 0;
+  margin: 0;
+  color: var(--blue);
+  font-size: 11px;
+  font-weight: 600;
+}
+
+.invite-card .invite-status:empty {
+  display: none;
+}
+
+/* Confirmação de terminar sessão */
+.logout-actions {
+  display: grid;
+  gap: 10px;
+}
+
+.logout-actions .button {
+  text-decoration: none;
+}
+
+/* Rodapé partilhado */
+.site-footer {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 15px;
+  margin-top: auto;
+  padding: 20px 0;
+  border-top: 1px solid rgba(219, 222, 233, 0.75);
+}
+
+.site-footer p {
+  margin: 0;
+  color: var(--muted);
+  font-size: 11px;
+}
+
+.footer-links {
+  display: flex;
+  gap: 18px;
+}
+
+.footer-links a {
+  color: var(--muted);
+  font-size: 11px;
+  font-weight: 600;
+  transition: color 160ms ease;
+}
+
+.footer-links a:hover {
+  color: var(--blue);
+}

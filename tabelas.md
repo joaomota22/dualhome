@@ -8,6 +8,7 @@ CREATE TABLE Familias (
     nome_casa_a VARCHAR(100) NOT NULL,
     nome_casa_b VARCHAR(100) NOT NULL,
     inicio_alternancia DATE NOT NULL, -- Data de um fim de semana em que o jovem fica na casa A
+    codigo_convite VARCHAR(12) NOT NULL UNIQUE, -- Código partilhado para outros membros entrarem na família
     data_criacao TIMESTAMP DEFAULT CURRENT_TIMESTAMP
 ) ENGINE=InnoDB;
 
@@ -29,11 +30,17 @@ CREATE TABLE Utilizadores (
 --     nome_casa_a VARCHAR(100) NOT NULL,
 --     nome_casa_b VARCHAR(100) NOT NULL,
 --     inicio_alternancia DATE NOT NULL,
+--     codigo_convite VARCHAR(12) NOT NULL UNIQUE,
 --     data_criacao TIMESTAMP DEFAULT CURRENT_TIMESTAMP
 -- ) ENGINE=InnoDB;
 -- ALTER TABLE Utilizadores
 --     ADD COLUMN id_familia INT NULL AFTER tipo_perfil,
 --     ADD CONSTRAINT fk_utilizador_familia FOREIGN KEY (id_familia) REFERENCES Familias(id) ON DELETE SET NULL;
+
+-- Migração para acrescentar o código de convite a famílias já criadas (executar uma vez):
+-- ALTER TABLE Familias ADD COLUMN codigo_convite VARCHAR(12) NULL UNIQUE AFTER inicio_alternancia;
+-- UPDATE Familias SET codigo_convite = UPPER(SUBSTRING(REPLACE(UUID(),'-',''),1,8)) WHERE codigo_convite IS NULL;
+-- ALTER TABLE Familias MODIFY codigo_convite VARCHAR(12) NOT NULL;
 
 
 CREATE TABLE Itens_Checklist (

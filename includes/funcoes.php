@@ -61,7 +61,7 @@ function iniciarSessaoUtilizador(array $utilizador, bool $lembrar): void
 function obterFamiliaDoUtilizador(int $idUtilizador): ?array
 {
   $statement = ligarBaseDados()->prepare(
-    'SELECT f.id, f.nome_familia, f.nome_casa_a, f.nome_casa_b, f.inicio_alternancia
+    'SELECT f.id, f.nome_familia, f.nome_casa_a, f.nome_casa_b, f.inicio_alternancia, f.codigo_convite
        FROM Familias f
        INNER JOIN Utilizadores u ON u.id_familia = f.id
       WHERE u.id = :id
@@ -71,6 +71,38 @@ function obterFamiliaDoUtilizador(int $idUtilizador): ?array
   $familia = $statement->fetch(PDO::FETCH_ASSOC);
 
   return $familia ?: null;
+}
+
+function obterFamiliaPorCodigo(string $codigo): ?array
+{
+  $statement = ligarBaseDados()->prepare(
+    'SELECT id, nome_familia, nome_casa_a, nome_casa_b, inicio_alternancia, codigo_convite
+       FROM Familias
+      WHERE codigo_convite = :codigo
+      LIMIT 1'
+  );
+  $statement->execute([':codigo' => $codigo]);
+  $familia = $statement->fetch(PDO::FETCH_ASSOC);
+
+  return $familia ?: null;
+}
+
+/* Alfabeto sem caracteres ambíguos (0/O, 1/I/L) para o código ser fácil de ler e digitar. */
+function gerarCodigoConvite(): string
+{
+  $alfabeto = 'ABCDEFGHJKMNPQRSTUVWXYZ23456789';
+  $codigo = '';
+
+  for ($i = 0; $i < 8; $i++) {
+    $codigo .= $alfabeto[random_int(0, strlen($alfabeto) - 1)];
+  }
+
+  return $codigo;
+}
+
+function normalizarCodigoConvite(string $texto): string
+{
+  return strtoupper(preg_replace('/\s+/', '', $texto));
 }
 
 /* Devolve a sexta-feira que abre o fim de semana a que a data pertence. */

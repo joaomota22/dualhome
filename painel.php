@@ -13,6 +13,7 @@ if ($familia === null) {
 }
 
 $primeiroNome = explode(' ', trim((string) $_SESSION['user_name']))[0];
+$textoConvite = 'Junta-te à família ' . $familia['nome_familia'] . ' no DualHome com o código ' . $familia['codigo_convite'] . '.';
 
 $hoje = new DateTimeImmutable('today');
 $sextaAtual = sextaDoFimDeSemana($hoje);
@@ -71,6 +72,19 @@ $funcionalidades = [
           </h1>
         </section>
 
+        <section class="invite-card" aria-labelledby="invite-title">
+          <div>
+            <small id="invite-title">Código da família</small>
+            <strong class="invite-code"><?= escapar($familia['codigo_convite']) ?></strong>
+            <p>Partilha este código com quem deve juntar-se à família no registo.</p>
+          </div>
+          <div class="invite-actions">
+            <button type="button" class="button button-small button-outline" id="invite-copy">Copiar código</button>
+            <button type="button" class="button button-small" id="invite-share">Partilhar</button>
+          </div>
+          <p class="invite-status" id="invite-status" role="status"></p>
+        </section>
+
         <section class="rotation-card" aria-label="Calendário de fins de semana">
           <div class="rotation-item">
             <small>Este fim de semana</small>
@@ -102,6 +116,43 @@ $funcionalidades = [
           <?php endforeach; ?>
         </section>
       </main>
+
+      <?php require __DIR__ . '/includes/footer.php'; ?>
     </div>
+
+    <script>
+      (function () {
+        var codigo = <?= json_encode($familia['codigo_convite'], JSON_HEX_TAG | JSON_HEX_AMP | JSON_HEX_APOS | JSON_HEX_QUOT) ?>;
+        var texto = <?= json_encode($textoConvite, JSON_HEX_TAG | JSON_HEX_AMP | JSON_HEX_APOS | JSON_HEX_QUOT | JSON_UNESCAPED_UNICODE) ?>;
+        var estado = document.getElementById('invite-status');
+
+        function mostrar(mensagem) {
+          estado.textContent = mensagem;
+        }
+
+        function copiar(valor, mensagemOk) {
+          if (navigator.clipboard && window.isSecureContext) {
+            navigator.clipboard.writeText(valor).then(
+              function () { mostrar(mensagemOk); },
+              function () { mostrar('Não foi possível copiar. Copia o código manualmente.'); }
+            );
+          } else {
+            mostrar('O teu navegador não permite copiar. Copia o código manualmente.');
+          }
+        }
+
+        document.getElementById('invite-copy').addEventListener('click', function () {
+          copiar(codigo, 'Código copiado.');
+        });
+
+        document.getElementById('invite-share').addEventListener('click', function () {
+          if (navigator.share) {
+            navigator.share({ title: 'DualHome', text: texto }).catch(function () {});
+          } else {
+            copiar(texto, 'Mensagem copiada. Cola-a onde quiseres.');
+          }
+        });
+      })();
+    </script>
   </body>
 </html>
