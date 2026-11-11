@@ -1,14 +1,39 @@
 CREATE DATABASE IF NOT EXISTS dualhome_db;
 USE dualhome_db;
 
+-- Família: duas casas e o fim de semana de referência usado pelo calendário de alternância
+CREATE TABLE Familias (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    nome_familia VARCHAR(100) NOT NULL,
+    nome_casa_a VARCHAR(100) NOT NULL,
+    nome_casa_b VARCHAR(100) NOT NULL,
+    inicio_alternancia DATE NOT NULL, -- Data de um fim de semana em que o jovem fica na casa A
+    data_criacao TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+) ENGINE=InnoDB;
+
 CREATE TABLE Utilizadores (
     id INT AUTO_INCREMENT PRIMARY KEY,
     nome VARCHAR(100) NOT NULL,
     email VARCHAR(150) NOT NULL UNIQUE,
     password VARCHAR(255) NOT NULL, -- Preparado para receber hashes (ex: password_hash do PHP)
     tipo_perfil ENUM('jovem', 'pai', 'mae') NOT NULL,
-    data_registo TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+    id_familia INT NULL, -- NULL até o utilizador configurar a família
+    data_registo TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    CONSTRAINT fk_utilizador_familia FOREIGN KEY (id_familia) REFERENCES Familias(id) ON DELETE SET NULL
 ) ENGINE=InnoDB;
+
+-- Migração para bases de dados já criadas (executar apenas uma vez, em vez dos blocos acima):
+-- CREATE TABLE Familias (
+--     id INT AUTO_INCREMENT PRIMARY KEY,
+--     nome_familia VARCHAR(100) NOT NULL,
+--     nome_casa_a VARCHAR(100) NOT NULL,
+--     nome_casa_b VARCHAR(100) NOT NULL,
+--     inicio_alternancia DATE NOT NULL,
+--     data_criacao TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+-- ) ENGINE=InnoDB;
+-- ALTER TABLE Utilizadores
+--     ADD COLUMN id_familia INT NULL AFTER tipo_perfil,
+--     ADD CONSTRAINT fk_utilizador_familia FOREIGN KEY (id_familia) REFERENCES Familias(id) ON DELETE SET NULL;
 
 
 CREATE TABLE Itens_Checklist (

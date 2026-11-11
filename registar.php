@@ -1,5 +1,6 @@
 <?php
 require_once __DIR__ . '/config/database.php';
+require_once __DIR__ . '/includes/funcoes.php';
 
 $feedback = '';
 $feedbackType = '';
@@ -36,10 +37,16 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         ':password' => password_hash($password, PASSWORD_DEFAULT),
         ':tipo_perfil' => $profile,
       ]);
-      $feedback = 'Conta criada com sucesso. Já podes iniciar sessão.';
-      $feedbackType = 'success';
-      $name = '';
-      $email = '';
+
+      iniciarSessaoUtilizador([
+        'id' => $pdo->lastInsertId(),
+        'nome' => $name,
+        'email' => $email,
+        'tipo_perfil' => $profile,
+      ], false);
+
+      header('Location: configurar_familia.php');
+      exit;
     } catch (PDOException $exception) {
       if ($exception->getCode() === '23000') {
         $feedback = 'Este e-mail já está registado.';

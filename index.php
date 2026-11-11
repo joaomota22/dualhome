@@ -34,7 +34,7 @@
               organizar o dia a dia. Sem stress, sem mal-entendidos.
             </p>
             <div class="hero-actions">
-              <a class="button" href="#comecar"
+              <a class="button" href="<?= $utilizadorAutenticado ? 'painel.php' : 'registar.php' ?>"
                 >Experimentar agora <span aria-hidden="true">↗</span></a
               >
               <a class="button button-outline" href="#funcionalidades"

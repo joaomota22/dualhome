@@ -2391,3 +2391,169 @@ h1 span {
     padding: 17px 14px 14px;
   }
 }
+
+/* Configuração da família */
+.family-field {
+  display: block;
+  margin-bottom: 11px;
+}
+
+.field-label {
+  display: block;
+  margin-bottom: 6px;
+  font-size: 10px;
+  font-weight: 700;
+}
+
+.family-field input {
+  width: 100%;
+  height: 36px;
+  padding: 0 10px;
+  border: 1px solid #dfe2eb;
+  border-radius: 9px;
+  background: #fff;
+  color: var(--ink);
+  font-family: inherit;
+  font-size: 10px;
+}
+
+.family-field input:focus {
+  outline: none;
+  border-color: var(--blue);
+  box-shadow: 0 0 0 3px rgba(56, 88, 201, 0.14);
+}
+
+.field-hint {
+  margin: 6px 0 0;
+  color: var(--muted);
+  font-size: 9px;
+  line-height: 1.45;
+}
+
+/* Painel */
+.dashboard-main {
+  padding: 34px 0 60px;
+}
+
+.dashboard-header {
+  margin-bottom: 26px;
+}
+
+.dashboard-header h1 {
+  margin: 14px 0 0;
+  font-size: clamp(34px, 4.6vw, 46px);
+  line-height: 1;
+}
+
+.rotation-card {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  margin-bottom: 16px;
+  overflow: hidden;
+  border: 1px solid rgba(255, 255, 255, 0.95);
+  border-radius: 17px;
+  background: rgba(255, 255, 255, 0.78);
+  box-shadow: 0 18px 42px rgba(42, 49, 100, 0.14);
+}
+
+.rotation-item {
+  padding: 22px 24px;
+}
+
+.rotation-item + .rotation-item {
+  border-left: 1px solid #dfe2eb;
+}
+
+.rotation-item small {
+  display: block;
+  color: var(--muted);
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.rotation-item strong {
+  display: block;
+  margin-top: 8px;
+  font-size: 18px;
+  font-weight: 800;
+}
+
+.rotation-item p {
+  margin: 5px 0 0;
+  color: #747a8b;
+  font-size: 11px;
+}
+
+.tool-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 16px;
+}
+
+.tool-card {
+  min-height: 190px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  padding: 22px;
+  border: 1px solid rgba(255, 255, 255, 0.95);
+  border-radius: 17px;
+  background: rgba(255, 255, 255, 0.78);
+  box-shadow: 0 18px 42px rgba(42, 49, 100, 0.1);
+}
+
+.tool-card-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.tool-card h2 {
+  margin: 0;
+  font-size: 15px;
+  font-weight: 800;
+}
+
+.tool-card p {
+  margin: 0;
+  color: #747a8b;
+  font-size: 12px;
+  line-height: 1.5;
+}
+
+.tool-badge {
+  display: inline-flex;
+  padding: 4px 9px;
+  border-radius: 999px;
+  background: #f1f2f7;
+  color: #747a8b;
+  font-size: 10px;
+  font-weight: 700;
+}
+
+@media (max-width: 860px) {
+  .rotation-card {
+    grid-template-columns: 1fr;
+  }
+
+  .rotation-item + .rotation-item {
+    border-left: 0;
+    border-top: 1px solid #dfe2eb;
+  }
+
+  .tool-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 620px) {
+  .tool-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .rotation-item {
+    padding: 18px 18px;
+  }
+}

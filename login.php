@@ -1,5 +1,6 @@
 <?php
 require_once __DIR__ . '/config/database.php';
+require_once __DIR__ . '/includes/funcoes.php';
 
 $feedback = '';
 $email = '';
@@ -22,27 +23,9 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                 $feedback = 'E-mail ou palavra-passe inválidos.';
             } else {
                 $remember = isset($_POST['remember']) && $_POST['remember'] === '1';
-                $sessionLifetime = $remember ? 2592000 : 0;
+                iniciarSessaoUtilizador($user, $remember);
 
-                if ($remember) {
-                    ini_set('session.gc_maxlifetime', (string) $sessionLifetime);
-                }
-
-                session_set_cookie_params([
-                    'lifetime' => $sessionLifetime,
-                    'path' => '/',
-                    'secure' => !empty($_SERVER['HTTPS']) && $_SERVER['HTTPS'] !== 'off',
-                    'httponly' => true,
-                    'samesite' => 'Lax',
-                ]);
-                session_start();
-                session_regenerate_id(true);
-                $_SESSION['user_id'] = (int) $user['id'];
-                $_SESSION['user_name'] = $user['nome'];
-                $_SESSION['user_email'] = $user['email'];
-                $_SESSION['user_role'] = $user['tipo_perfil'];
-
-                header('Location: index.php');
+                header('Location: painel.php');
                 exit;
             }
         } catch (PDOException $exception) {
