@@ -23,8 +23,8 @@
                     Simplificar a vida entre <span class="text-blue">duas casas</span>.
                 </h1>
                 <p class="subtitle about-subtitle">
-                    O DualHome nasceu para transformar a logística da guarda partilhada e da residência alternada,
-                    removendo o atrito diário e devolvendo a paz de espírito às famílias.
+                    O DualHome nasceu para transformar a logística da guarda partilhada e da residência alternada, com o objetivo de
+                    remover o atrito diário e devolver a paz de espírito às famílias.
                 </p>
             </section>
 
@@ -40,7 +40,7 @@
                     <div class="card-icon green-bg" aria-hidden="true">🤝</div>
                     <h3>Foco na colaboração</h3>
                     <p>Substituímos conversas dispersas e
-                        esquecimentos por ferramentas inteligentes, promovendo uma comunicação saudável entre os pais.
+                        esquecimentos por ferramentas inteligentes, que promovem uma comunicação saudável entre os pais.
                     </p>
                 </div>
                 <div class="value-card">

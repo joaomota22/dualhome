@@ -137,7 +137,7 @@ $funcionalidades = [
               function () { mostrar('Não foi possível copiar. Copia o código manualmente.'); }
             );
           } else {
-            mostrar('O teu navegador não permite copiar. Copia o código manualmente.');
+            mostrar('O teu browser não permite copiar. Copia o código manualmente.');
           }
         }
 

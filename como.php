@@ -80,7 +80,7 @@
       <div class="process-steps-grid">
         <div class="process-step">
           <h3 class="process-step-title">01 / Criar Perfil Familiar 👨‍👩‍👧‍👦</h3>
-          <p class="process-step-description">Regista-te e conecta os teus pais e irmãos para que todos fiquem em sintonia.</p>
+          <p class="process-step-description">Regista-te e liga os teus pais e irmãos para que todos fiquem em sintonia.</p>
         </div>
         <div class="process-step">
           <h3 class="process-step-title">02 / Preparar Checklists 📋</h3>
