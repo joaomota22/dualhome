@@ -166,8 +166,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
               <label class="terms-field">
                 <input type="checkbox" name="terms" value="1" required />
                 <span
-                  >Aceito os <a href="#termos">Termos</a> e a
-                  <a href="#privacidade">Política de Privacidade</a>.</span
+                  >Aceito os <a href="termos.php">Termos</a> e a
+                  <a href="privacidade.php">Política de Privacidade</a>.</span
                 >
               </label>
               <button class="button signup-submit" type="submit">

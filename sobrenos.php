@@ -5,7 +5,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>DualHome - Sobre Nós</title>
+
     <link rel="stylesheet" href="styles/style.css">
+
     <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800&display=swap"
         rel="stylesheet">
 </head>
@@ -14,59 +16,69 @@
 
     <div class="page-shell">
         <?php $paginaAtiva = 'sobre'; require __DIR__ . '/includes/navbar.php'; ?>
-
-        <main class="main-content about-main">
-            <section class="about-hero">
-                <span class="eyebrow-badge">A
-                    nossa história e missão</span>
-                <h1 class="about-title">
-                    Simplificar a vida entre <span class="text-blue">duas casas</span>.
-                </h1>
-                <p class="subtitle about-subtitle">
-                    O DualHome nasceu para transformar a logística da guarda partilhada e da residência alternada, com o objetivo de
-                    remover o atrito diário e devolver a paz de espírito às famílias.
-                </p>
-            </section>
-
-            <section class="values-grid about-values-grid">
-                <div class="value-card">
-                    <div class="card-icon blue-bg" aria-hidden="true">🎯</div>
-                    <h3>O nosso propósito</h3>
-                    <p>Acreditamos que a transição entre
-                        lares deve ser fluida, transparente e livre de mal-entendidos para o bem-estar de todos,
-                        especialmente dos mais jovens.</p>
-                </div>
-                <div class="value-card">
-                    <div class="card-icon green-bg" aria-hidden="true">🤝</div>
-                    <h3>Foco na colaboração</h3>
-                    <p>Substituímos conversas dispersas e
-                        esquecimentos por ferramentas inteligentes, que promovem uma comunicação saudável entre os pais.
-                    </p>
-                </div>
-                <div class="value-card">
-                    <div class="card-icon purple-bg" aria-hidden="true">🔒</div>
-                    <h3>Privacidade e segurança</h3>
-                    <p>Os dados da tua família são
-                        estritamente privados, protegidos com os mais altos padrões de segurança e acessíveis apenas a
-                        quem tu decides.</p>
-                </div>
-            </section>
-
-            <section class="story-section about-story">
-                <h2>Criado por quem
-                    entende os desafios reais</h2>
-                <p>
-                    Gerir rotinas divididas, checklists de última hora e pedidos de acesso a pertenças esquecidas
-                    costumava ser sinónimo de stress. Criámos a plataforma que nós próprios queríamos ter tido:
-                    simples, intuitiva e pensada especificamente para o modelo de família moderna.
-                </p>
-            </section>
-
-        </main>
-
-      <?php require __DIR__ . '/includes/footer.php'; ?>
     </div>
 
-</body>
+    <main class="about-main">
 
+        <section class="page-shell about-hero">
+            <span class="eyebrow-badge">A nossa história e missão</span>
+
+            <h1 class="about-title">
+                Simplificar a vida entre <span class="text-blue">duas casas</span>.
+            </h1>
+
+            <p class="subtitle about-subtitle">
+                O DualHome nasceu para transformar a logística da guarda partilhada e da residência alternada,
+                com o objetivo de remover o atrito diário e devolver a paz de espírito às famílias.
+            </p>
+        </section>
+
+        <section class="page-shell values-grid about-values-grid">
+
+            <div class="value-card">
+                <div class="card-icon blue-bg" aria-hidden="true">🎯</div>
+                <h3>O nosso propósito</h3>
+                <p>
+                    Acreditamos que a transição entre lares deve ser fluida,
+                    transparente e livre de mal-entendidos para o bem-estar de todos,
+                    especialmente dos mais jovens.
+                </p>
+            </div>
+
+            <div class="value-card">
+                <div class="card-icon green-bg" aria-hidden="true">🤝</div>
+                <h3>Foco na colaboração</h3>
+                <p>
+                    Substituímos conversas dispersas e esquecimentos por ferramentas
+                    inteligentes, que promovem uma comunicação saudável entre os pais.
+                </p>
+            </div>
+
+            <div class="value-card">
+                <div class="card-icon purple-bg" aria-hidden="true">🔒</div>
+                <h3>Privacidade e segurança</h3>
+                <p>
+                    Os dados da tua família são estritamente privados, protegidos
+                    com os mais altos padrões de segurança e acessíveis apenas a quem tu decides.
+                </p>
+            </div>
+
+        </section>
+
+        <section class="page-shell story-section about-story">
+            <h2>Criado por quem entende os desafios reais</h2>
+
+            <p>
+                Gerir rotinas divididas, checklists de última hora e pedidos de acesso
+                a pertenças esquecidas costumava ser sinónimo de stress.
+                Criámos a plataforma que nós próprios queríamos ter tido:
+                simples, intuitiva e pensada especificamente para o modelo de família moderna.
+            </p>
+        </section>
+
+    </main>
+
+    <?php require __DIR__ . '/includes/footer.php'; ?>
+
+</body>
 </html>

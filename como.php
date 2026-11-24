@@ -96,8 +96,7 @@
         </div>
       </div>
     </section>
-
-    <section class="features">
+    <section class="page-shell features">
       <div class="feature-item">
         <div class="feature-icon icon-blue">📋</div>
         <div>
@@ -120,10 +119,7 @@
         </div>
       </div>
     </section>
-
   </main>
-
       <?php require __DIR__ . '/includes/footer.php'; ?>
-
 </body>
 </html>
